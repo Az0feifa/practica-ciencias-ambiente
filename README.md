@@ -1,2 +1,2 @@
 # practica-ciencias-ambiente
-Practica para niños
+Práctica interactiva de ciencias para niños.
