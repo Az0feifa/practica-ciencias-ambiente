@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Práctica de Ciencias - Juego Interactivo</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="mascot">🌎</div>
+    <div>
+      <h1>Laboratorio de Ciencias</h1>
+      <p>Aprende a reconocer el concepto por lo que significa, no por memorizar una palabra.</p>
+    </div>
+  </header>
+
+  <section id="home" class="screen active">
+    <div class="hero">
+      <h2>Elige una práctica</h2>
+      <p>Cada vez que abras este archivo, las preguntas y las respuestas aparecerán en un orden diferente.</p>
+
+      <div class="games">
+        <button class="game-card" onclick="startGame('concept')">
+          <div class="icon">🧠</div>
+          <h3>Juego 1: ¿Qué concepto es?</h3>
+          <p>Lee una situación, piensa qué está ocurriendo y elige el concepto correcto.</p>
+          <span class="badge">Comprensión de conceptos</span>
+        </button>
+
+        <button class="game-card" onclick="startGame('mission')">
+          <div class="icon">🔬</div>
+          <h3>Juego 2: Misión científica</h3>
+          <p>Clasifica plantas, animales y acciones ambientales en situaciones nuevas.</p>
+          <span class="badge">Aplicación y razonamiento</span>
+        </button>
+      </div>
+
+      <div class="tip">
+        💡 <strong>Tu misión:</strong> no adivines por la palabra. Busca la pista en la situación: ¿dónde vive?, ¿qué come?, ¿qué está pasando con la naturaleza?
+      </div>
+    </div>
+  </section>
+
+  <section id="game" class="screen">
+    <div class="topbar">
+      <button class="btn btn-secondary" onclick="goHome()">← Menú</button>
+      <div class="stats">
+        <div class="stat" id="scoreStat">⭐ 0</div>
+        <div class="stat" id="lifeStat">❤️❤️❤️</div>
+        <div class="stat" id="countStat">1 / 10</div>
+      </div>
+    </div>
+
+    <div class="progress"><div id="progressBar"></div></div>
+
+    <div class="question-card" id="questionCard">
+      <div class="question-kind" id="questionKind"></div>
+      <h2 class="question" id="questionText"></h2>
+      <div class="answers" id="answers"></div>
+
+      <div class="feedback" id="feedback"></div>
+      <div class="next-row">
+        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" style="display:none">Siguiente →</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" class="screen">
+    <div class="result">
+      <div class="big" id="resultIcon">🏆</div>
+      <div class="stars" id="resultStars">⭐⭐⭐</div>
+      <h2 id="resultTitle">¡Misión completada!</h2>
+      <div class="score" id="finalScore"></div>
+      <p id="resultText"></p>
+      <div class="result-actions">
+        <button class="btn btn-primary" onclick="restartGame()">Jugar otra vez</button>
+        <button class="btn btn-secondary" onclick="goHome()">Elegir otro juego</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="config.js"></script>
+<script src="concept.js"></script>
+<script src="mission.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
